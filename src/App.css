@@ -1,0 +1,172 @@
+/*
+CSS 스타일링에서 배경이랑 이미지를 추가할려고 했는데, 추가하게 되면 다크모드를 켰을 때 이미지가 깨지는 현상이 발생해서 따로 넣지는 않았습니다.
+*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: white;
+}
+
+.underline::before {
+    content: '';
+    background-color: black;
+    display: block;
+    height: 0.1em;
+    width: 1790px;
+    margin-top: -20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.dark-mode-toggle label {
+    margin-right: 10px;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dark-mode-toggle input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 2px;
+    left: 2px;
+    transition: 0.2s;
+}
+
+.dark-mode-toggle input[type="checkbox"]:checked::before {
+    left: 22px;
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    width: 500px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+li:hover {
+    background-color: #f2f2f2;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.today-date {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .header {
+    border-bottom: 1px solid #fff;
+}
+
+.dark-mode .dark-mode-toggle label {
+    color: #fff;
+}
+
+.dark-mode .dark-mode-toggle input[type="checkbox"] {
+    background-color: #666;
+}
+
+.dark-mode .dark-mode-toggle input[type="checkbox"]::before {
+    background-color: #333;
+}
+
+.dark-mode input[type="text"] {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode ul {
+    background-color: #555;
+}
+
+.dark-mode li {
+    background-color: #444;
+    box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode li:hover {
+    background-color: #333;
+}
+
+.dark-mode .completed {
+    text-decoration: line-through;
+}
+
